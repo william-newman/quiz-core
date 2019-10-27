@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="login-card">
+    <h2 class="heading">Login to start playing!</h2>
+    <form #loginForm="ngForm" class="login-form">
+      <!-- use the keyup.enter instead of keydown -->
+      <input [(ngModel)]="username" type="username" placeholder="Username" name="username" class="form-input"
+        (keydown)="handleSubmit($event)" required />
+      <input type="password" placeholder="Passcode" [(ngModel)]="passcode" name="passcode" class="form-input"
+        (keydown)="handleSubmit($event)" required />
+      <button type="button" (click)="validateUser()" class="btn btn-login" [disabled]="!loginForm.form.valid">
+        Login!
+      </button>
+      <br />
+      <br />
+      <div (click)="forgotPassword()">
+        <a class="link-btn">Forgot your passcode?</a>
+      </div>
+    </form>
+    <br />
+    <br />
+    <hr />
+    <br />
+    <br />
+    <a class="link-btn auth-banner-link" routerLink="/signup">Create an account!</a>
+  </div>
+  <div class="error-container">
+    <div class="errors" *ngFor="let err of errorMessages">
+      {{ err }}
+    </div>
+  </div>
+</div>

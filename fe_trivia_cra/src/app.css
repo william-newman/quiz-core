@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3cd3ba);
+}
+
+div {
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.errors {
+  text-align: center;
+  background-color: rgba(240, 248, 255, 0.295);
+  border-radius: 4px;
+  color: rgb(27, 2, 2);
+  margin: auto;
+  font-size: 1.8rem;
+  width: 40vw;
+}
+
+.error-container {
+  max-height: 15vh;
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.info {
+  font-size: 1.5em;
+}

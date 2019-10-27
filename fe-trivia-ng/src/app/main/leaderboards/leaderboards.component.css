@@ -1,0 +1,48 @@
+.leaderboard-table {
+  margin: 10px;
+  /* min-width: 50%; */
+}
+
+.leaderboard-header {
+  padding: 2%;
+}
+
+table,
+th,
+td {
+  border: solid 1px black;
+}
+
+caption {
+  text-align: center;
+  font-size: 2.3em;
+  padding: 10px;
+}
+
+th,
+td {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.stroop-leader-container {
+  margin: 5px 4%;
+  display: inline-flex;
+  width: 90%;
+}
+
+.stroop-leader-easy {
+  width: 30%;
+  margin: 2px auto;
+}
+
+.stroop-leader-complex {
+  width: 30%;
+  margin: 2px auto;
+}
+
+.stroop-leader-insane {
+  width: 30%;
+  margin: 2px auto;
+}

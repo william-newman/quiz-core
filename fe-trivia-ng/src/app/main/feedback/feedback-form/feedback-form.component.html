@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="login-card">
+    <h2 class="heading">Feedback</h2>
+    <p *ngIf="!loggedIn">Currently submitting feedback {{ currentUser }}</p>
+    <p *ngIf="loggedIn">Submitting feedback as {{ currentUser }}</p>
+    <div *ngIf="!feedbackSubmitted" class="error-container">
+      <div class="errors" *ngFor="let err of errorMessages">
+        {{ err }}
+      </div>
+    </div>
+    <form #loginForm="ngForm" *ngIf="!feedbackSubmitted" class="login-form">
+      <input [(ngModel)]="feedbackTitle" type="text" placeholder="Feedback Title" name="fb-title" class="form-input"
+        required />
+      <textarea type="text" placeholder="Feedback Body" [(ngModel)]="feedbackBody" name="fb-body" class="form-textarea"
+        required></textarea>
+      <button type="button" *ngIf="!feedbackSubmitted" (click)="validateFeedback()" class="btn btn-login"
+        [disabled]="!loginForm.form.valid">
+        Send!
+      </button>
+    </form>
+    <div *ngIf="feedbackSubmitted" class="message">
+      <p class="f-title">{{ feedbackTitle }}</p>
+      <p class="f-body">{{ feedbackBody }}</p>
+    </div>
+    <div *ngIf="feedbackSubmitted" class="message-container">
+      <div class="errors" *ngFor="let err of errorMessages">
+        {{ err }}
+      </div>
+      <button type="button" routerLink="/">Home</button>
+    </div>
+  </div>
+</div>

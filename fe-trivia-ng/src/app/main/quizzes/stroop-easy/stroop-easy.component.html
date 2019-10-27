@@ -1,0 +1,65 @@
+<div *ngIf="testActive">
+  Timer: {{ testTimer }}
+</div>
+<div class="stroop-container">
+  <!-- Class is randomly generated, as is the word
+    Word is used to determine correctness -->
+  <div *ngIf="!testActive">
+    <div class="splash-text" *ngIf="!testResults">
+      Stroop Test - Easy
+    </div>
+  </div>
+  <div *ngIf="testActive">
+    <div *ngIf="red"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass}">
+      RED</div>
+    <div *ngIf="green"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass}">
+      GREEN</div>
+    <div *ngIf="blue"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass}">
+      BLUE</div>
+    <div *ngIf="yellow"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass}">
+      YELLOW</div>
+  </div>
+  <div *ngIf="testResults" class="splash-text">
+    {{ resultScreenMessage }}
+  </div>
+</div>
+<div *ngIf="!testResults" class="info-panel">
+  <div>
+    <div *ngIf="!testActive" id="stroop-input">Press Enter to Begin!</div>
+  </div>
+  <div class="info" *ngIf="!testActive">
+    - Don't miss more than ten!<br />
+    - You have 30 seconds!<br />
+    <hr />
+  </div>
+  <div class="controls">
+    "R" for RED <br />
+    "G" for GREEN <br />
+    "B" for BLUE <br />
+    "Y" for YELLOW
+  </div>
+  {{ answerFeedback }}
+  <div *ngIf="testActive">
+    Correct: {{ numOfCorrectAnswers }}
+  </div>
+</div>
+<div *ngIf="testResults" class="test-results">
+  <div>
+    Congrats! <br />
+    You scored {{ numOfCorrectAnswers }} correct answers in 30 seconds and missed {{ numOfIncorrectAnswers }}!
+  </div>
+  <div>
+    <button type="button" (click)="tryAgain()">Try Again</button>
+  </div>
+  <div>
+    {{ errorMessage }}
+  </div>
+</div>
+<hr class="rule" />
+<div>
+  <button type="button" routerLink="/">Abandon Quiz</button>
+</div>

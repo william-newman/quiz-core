@@ -1,0 +1,39 @@
+.home-container {
+  z-index: 2;
+}
+
+.big-button-contain {
+  border: solid 1px rgb(34, 81, 134);
+  text-align: center;
+  align-content: center;
+  margin: auto;
+}
+
+.big-btn {
+  font-size: 2em;
+  padding: 1vh 5vw;
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1% auto;
+  height: 15vh;
+  width: 30vw;
+}
+
+.btn-margin {
+  margin: 0px 1%;
+}
+
+.big-btn:hover {
+  background: radial-gradient(circle, #e7e7e7, #bebebe, #e7e7e7);
+}
+
+.easy {
+  background: linear-gradient(0.25turn, #bbd6d8, #cfcfcf, #c3d8ce);
+}
+
+.medium {
+  background: linear-gradient(0.25turn, #cfd8c3, #cfcfcf, #d8d6c3);
+}
+
+.hard {
+  background: linear-gradient(0.25turn, #d8d2c3, #cfcfcf, #d8c5c3);
+}

@@ -1,0 +1,57 @@
+.container {
+    margin: 2vh auto;
+    width: 90%;
+    font-size: 1.6em;
+}
+
+#fire {
+    margin: 1%;
+}
+
+.btn {
+    font-family: 'Raleway', sans-serif;
+    height: 48px;
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.17), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.item-input {
+    width: 40%;
+    height: 80vh;
+    float: left;
+    overflow: auto;
+    font-size: 1.1em;
+}
+
+.display-list {
+    width: 40%;
+    height: 80vh;
+    float: right;
+    overflow: auto;
+    font-size: 1.1em;
+}
+
+.item {
+    display: inline-block;
+    width: 99%;
+}
+
+#x-btn, #fire {
+    float: right;
+}
+
+#x-btn {
+    height: 100%;
+    width: 8.5%;
+    margin: auto;
+}
+
+#item-content {
+    display: inline-flex;
+    width: 90%;
+    /* margin: 0 10% 0 0; */
+    border-bottom: dotted 1px black;
+}

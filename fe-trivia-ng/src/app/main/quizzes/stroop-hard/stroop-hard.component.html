@@ -1,0 +1,69 @@
+<div *ngIf="testActive">
+  Timer: {{ testTimer }}
+</div>
+<div [ngClass]="{'stroop-container':true, 'insane-bkg':testActive}">
+  <!-- Class is randomly generated, as is the word
+      Word is used to determine correctness -->
+  <div *ngIf="!testActive">
+    <div class="splash-text" *ngIf="!testResults">
+      Stroop Test - Insane
+    </div>
+  </div>
+  <div *ngIf="testActive">
+    <div
+      [ngClass]="{'color-vermillion':vermillionClass, 'color-lime':limeClass, 'color-turquoise':turquoiseClass, 'color-amber':amberClass, 'color-violet':violetClass, 'color-sandstone':sandstoneClass, 'color-flamingo':flamingoClass, 'color-indigo':indigoClass}">
+      <span name="font-maker"
+        [ngClass]="{'lato':font0, 'raleway':font1, 'roboto':font2, 'mansalva':font3, 'press-start':font4, 'big-shoulders':font5, 'turret-road': font6, 'cursive': font7 }">
+        {{ currentWord }}
+      </span>
+    </div>
+  </div>
+  <div *ngIf="testResults" class="splash-text">
+    {{ resultScreenMessage }}
+  </div>
+</div>
+<div *ngIf="!testResults" class="info-panel">
+  <div>
+    <div *ngIf="!testActive" id="stroop-input">Press Enter to Begin!</div>
+  </div>
+  <div class="info" *ngIf="!testActive">
+    - Don't miss more than five!<br />
+    - Wrong answers lower your score!<br />
+    - You have {{ totalTime }} seconds!<br />
+    - Info panel will disappear!<br />
+    - Fonts will change!<br />
+    - The background has changed!<br />
+    <hr />
+    <div class="controls">
+      "A" for VERMILLION <br />
+      "S" for LIME <br />
+      "D" for TURQUOISE <br />
+      "F" for AMBER <br />
+      "J" for VIOLET <br />
+      "K" for SANDSTONE <br />
+      "L" for FLAMINGO <br />
+      ";" for INDIGO <br />
+    </div>
+    {{ answerFeedback }}
+    <div *ngIf="testActive">
+      Correct: {{ numOfCorrectAnswers }}
+    </div>
+  </div>
+</div>
+<div *ngIf="testResults" class="test-results">
+  <div>
+    Congrats! <br />
+    You scored {{ numOfCorrectAnswers }} correct answers in {{ totalTime }} seconds and missed
+    {{ numOfIncorrectAnswers }}!
+  </div>
+  <div>
+    <button type="button" (click)="tryAgain()">Try Again</button>
+  </div>
+  <div>
+    {{ errorMessage }}
+  </div>
+</div>
+<hr class="rule" />
+<div>
+  <button type="button" routerLink="/">Abandon Quiz</button>
+</div>

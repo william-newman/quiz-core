@@ -1,0 +1,5 @@
+export default {
+    FETCH_SUCCESS_LB: 'FETCH_SUCCESS_LB',
+    GET_FETCH_LB: 'GET_FETCH_LB',
+    THROW_ERRORS_LB: 'THROW_ERRORS_LB'
+};

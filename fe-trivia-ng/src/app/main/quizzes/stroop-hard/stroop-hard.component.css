@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Lato|Mansalva|Press+Start+2P|Raleway|Roboto|Turret+Road&display=swap');
+/* preload fonts */
+div {
+  text-align: center;
+}
+
+.stroop-container {
+  width: 100%;
+  padding: 15vh 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 10rem;
+  font-weight: 900;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 15px whitesmoke;
+}
+
+#stroop-input {
+  background-color: rgba(0, 136, 255, 0.1);
+  text-align: center;
+}
+
+.color-vermillion {
+  color: rgb(227, 66, 52);
+}
+
+.color-lime {
+  color: rgb(192, 255, 0);
+}
+
+.color-turquoise {
+  color: turquoise;
+}
+
+.color-amber {
+  color: rgb(255, 191, 0);
+}
+
+.color-violet {
+  color: rgb(127, 0, 255);
+}
+
+.color-sandstone {
+  color: rgb(210, 180, 140);
+}
+
+.color-flamingo {
+  color: rgb(252, 142, 172);
+}
+
+.color-indigo {
+  color: rgb(63, 0, 255);
+}
+
+.raleway {
+  font-family: 'Raleway', monospace;
+}
+
+.roboto {
+  font-family: 'Roboto', monospace
+}
+
+.mansalva {
+  font-family: 'Mansalva', monospace
+}
+
+.lato {
+  font-family: 'Lato', monospace
+}
+
+.press-start {
+  font-family: 'Press Start 2P', monospace
+}
+
+.big-shoulders {
+  font-family: 'Big Shoulders Text', monospace
+}
+
+.turret-road {
+  font-family: 'Turret Road', monospace
+}
+
+.cursive {
+  font-family: cursive, monospace;
+}
+
+.splash-text {
+  color: rgb(34, 34, 34);
+  font-size: 8rem;
+}
+
+.insane-bkg {
+  animation: colorchange 5s linear 0s infinite normal;
+}
+
+@keyframes colorchange
+    {
+      0%   {background: rgb(129, 0, 0);}
+      25%  {background: rgb(124, 124, 0);}
+      50%  {background: rgb(0, 0, 121);}
+      75%  {background: rgb(0, 109, 0);}
+      100% {background: rgb(80, 0, 0);}
+    }

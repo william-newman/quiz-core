@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="signup-card">
+    <form #signupForm="ngForm">
+      <h2 class="heading">Sign Up</h2>
+
+      <label for="username" class="label">Username</label>
+      <input type="username" name="username" class="form-input" [(ngModel)]="username" maxlength="60"
+        placeholder="Please enter your preferred username" required />
+
+      <label for="passcode" class="label">Passcode</label>
+      <input type="password" name="passcode" class="form-input" [(ngModel)]="passcode"
+        placeholder="Choose a 3-6 digit passcode" required />
+
+      <input type="password" name="passcode-confirm" class="form-input" [(ngModel)]="passcodeConfirm"
+        placeholder="Confirm passcode" required />
+
+      <label for="role" class="label">Permissions</label>
+      <input type="password" name="role" class="form-input" [(ngModel)]="role" placeholder="May be left blank"
+        maxlength="12" />
+
+      <button [disabled]="!signupForm.form.valid" type="submit" (click)="validateUser()" class="btn btn-signup">
+        Sign Up!
+      </button>
+    </form>
+  </div>
+  <div class="error-container">
+    <div class="errors" *ngFor="let err of errorMessages">
+      {{ err }}
+    </div>
+  </div>
+</div>

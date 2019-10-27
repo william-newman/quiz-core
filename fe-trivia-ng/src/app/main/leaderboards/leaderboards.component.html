@@ -1,0 +1,109 @@
+<h2 *ngIf="dataLoaded" class="center leaderboard-header">
+  - Top Ten -
+</h2>
+<h2 *ngIf="!dataLoaded" class="center leaderboard-header">Leaderboard data not found!</h2>
+<div class="center stroop-leader-container">
+  <!-- Table 1 -->
+  <table class="leaderboard-table stroop-leader-easy" title="Stroop Test - Easy">
+    <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopEasyData[0].quiz }}</caption>
+    <caption *ngIf="!dataLoaded">{{ testNames[0] }}</caption>
+    <tr>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let scoreData of stroopEasyData, let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{scoreData.user.username}}</td>
+      <td>{{scoreData.quizScore}}</td>
+    </tr>
+  </table>
+  <br />
+  <!-- Table 2 -->
+  <table class="leaderboard-table stroop-leader-complex" title="Stroop Test - Complex">
+    <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopComplexData[0].quiz }}</caption>
+    <caption *ngIf="!dataLoaded">{{ testNames[1] }}</caption>
+    <tr>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let scoreData of stroopComplexData, let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{scoreData.user.username}}</td>
+      <td>{{scoreData.quizScore}}</td>
+    </tr>
+  </table>
+  <br />
+  <!-- Table 3 -->
+  <table class="leaderboard-table stroop-leader-insane" title="Stroop Test - Insane">
+    <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopInsaneData[0].quiz }}</caption>
+    <caption *ngIf="!dataLoaded">{{ testNames[2] }}</caption>
+    <tr>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let scoreData of stroopInsaneData, let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{scoreData.user.username}}</td>
+      <td>{{scoreData.quizScore}}</td>
+    </tr>
+  </table>
+</div>
+<!-- Second set of tables -->
+
+<div class="center stroop-leader-container">
+    <!-- Table 1 -->
+    <table class="leaderboard-table stroop-leader-easy" title="Stroop Test - Easy">
+      <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopEasyData[0].quiz }}</caption>
+      <caption *ngIf="!dataLoaded">{{ testNames[0] }}</caption>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+      <tr *ngFor="let scoreData of stroopEasyData, let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{scoreData.user.username}}</td>
+        <td>{{scoreData.quizScore}}</td>
+      </tr>
+    </table>
+    <br />
+    <!-- Table 2 -->
+    <table class="leaderboard-table stroop-leader-complex" title="Stroop Test - Complex">
+      <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopComplexData[0].quiz }}</caption>
+      <caption *ngIf="!dataLoaded">{{ testNames[1] }}</caption>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+      <tr *ngFor="let scoreData of stroopComplexData, let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{scoreData.user.username}}</td>
+        <td>{{scoreData.quizScore}}</td>
+      </tr>
+    </table>
+    <br />
+    <!-- Table 3 -->
+    <table class="leaderboard-table stroop-leader-insane" title="Stroop Test - Insane">
+      <caption *ngIf="dataLoaded" class="leaderboard-table">{{ stroopInsaneData[0].quiz }}</caption>
+      <caption *ngIf="!dataLoaded">{{ testNames[2] }}</caption>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+      <tr *ngFor="let scoreData of stroopInsaneData, let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{scoreData.user.username}}</td>
+        <td>{{scoreData.quizScore}}</td>
+      </tr>
+    </table>
+  </div>
+
+<div class="center">
+  <button (click)="scrollTop()" id="scroll-to-top" title="Go to top">Back to Top</button>
+</div>
+<br />

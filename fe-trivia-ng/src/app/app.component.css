@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.banner {
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  top: 0;
+  text-align: center;
+  height: 10vh;
+  /* border-bottom: dashed 1px rgb(41, 39, 39); */
+  font-weight: 600;
+  padding-top: 2vh;
+  position: sticky;
+  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3cd3ba); */
+}
+/* Are ya yellow?!: #feda6a cadet instead
+
+Silver Fox: #d4d4dc
+
+Deep Matte Grey: #393f4d
+
+Dark Slate: #1d1e22 */
+
+.main-banner-link {
+  width: 15vw;
+  height: 8vh;
+  position: fixed;
+  top: -14vh;
+  left: -14vw;
+  border-radius: 50%;
+  padding: 15vh 4vw 4vh 15vw;
+  cursor: pointer;
+  font-size: 2.5em;
+  background-color: rgba(95, 158, 160, 0.432);
+  box-shadow: 10px 15px 30px rgba(244, 255, 198, 0.05);
+}
+
+.auth-banner-link {
+  padding: 0px 1vw;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.auth-banner-welcome {
+  padding: 0px 1vw;
+  font-size: 2em;
+  color: black;
+}
+
+.auth-float {
+  width: 15vw;
+  height: 8vh;
+  position: fixed;
+  top: -14vh;
+  right: -14vw;
+  border-radius: 50%;
+  padding: 15vh 15vw 4vh 4vw;
+  background-color: rgba(95, 158, 160, 0.432);
+  box-shadow: -10px 15px 30px rgba(244, 255, 198, 0.05);
+}
+
+.link-btn {
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+.link-btn:hover {
+  color: rgb(106, 78, 128);
+  border-bottom: solid rgba(107, 107, 107, 0.329) 1px;
+}
+
+.buttons-bottom {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+  font-family: 'Lato', Monospace, serif;
+}
+
+.footer-link {
+  font-size: 1.5em;
+  padding: 2%;
+}
+
+.leaderboards {
+  /* font-size: 2.3em; */
+  text-emphasis: none;
+}
+
+.patch-notes {
+  text-emphasis: none;
+}
+
+.feedback {
+  text-emphasis: none;
+}
+
+.spacer {
+  margin: 10vh auto;
+  width: 100%;
+}
+
+.footer {
+  z-index: 1;
+  position: fixed;
+  bottom: -80px;
+  left: 30%;
+  width: 40%;
+  margin: 0px auto;
+  padding: 15px 0px 80px;
+  height: 5vh;
+  border-radius: 50%;
+  box-shadow: 0px -15px 30px rgba(244, 255, 198, 0.05);
+  background: rgba(95, 158, 160, 0.432);
+}

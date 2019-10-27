@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="item-input">
+    <label for="form">Enter items to be randomized here:</label>
+    <form #itemForm="ngForm">
+      <input [(ngModel)]="itemToAdd" (keyup.enter)="validateItem()" type="text" name="itemInput" class="btn"
+        id="item-input" />
+      <input type="button" class="btn" id="add-item" (click)="validateItem()" value="Add Item" />
+      <input type="button" class="btn" id="add-item" (click)="deleteItem()" value="Delete" />
+      <input type="button" class="btn" id="fire" (click)="randomize()" value="Fire" />
+    </form>
+    <ul class="items-to-add" *ngFor="let itemObj of itemsToSort">
+      <li class="item">
+        <span id="item-content">
+          {{ itemObj.item }}
+        </span>
+        <!-- <button class="btn" id="x-btn" type="button" (click)="deleteItem(itemObj.index)">X</button> -->
+      </li>
+    </ul>
+  </div>
+  <div class="display-list">
+    Results:
+    <span *ngFor="let itemObj of sortedItems">
+      <span class="item">• {{ itemObj.item }}</span>
+    </span>
+  </div>
+</div>

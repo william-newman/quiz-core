@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: INFO
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      database: quizcore
+      port: 27023

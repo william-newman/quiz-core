@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3cd3ba); */
+  background-color: cadetblue;
+}
+
+div {
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.errors {
+  text-align: center;
+  background-color: rgba(240, 248, 255, 0.295);
+  border-radius: 4px;
+  color: rgb(27, 2, 2);
+  margin: 1vh auto;
+  font-size: 1.8rem;
+  width: 40vw;
+}
+
+.error-container {
+  max-height: 15vh;
+  margin: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.info {
+  font-size: 1.5em;
+}
+
+@keyframes tickerB {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.tcontainer{
+  z-index: -2;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+.ticker-wrap {
+  width: 100%;
+  padding-left: 100%;
+}
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: tickerB;
+  animation-duration: 50s;
+}
+.ticker-item{
+  border-radius: 50%;
+  height: 85vh;
+  margin: auto;
+  opacity: 0.3;
+  display: inline-block;
+  padding: 10px 2rem;
+}

@@ -1,0 +1,18 @@
+.patch-notes {
+    text-align: left;
+    font-size: 2rem;
+    list-style-type: square;
+}
+
+.patch {
+    font-size: 2.3em;
+    text-align: left;
+    padding: 10px;
+    background-color: cadetblue;
+    border-radius: 1em;
+    margin: 5%;
+}
+
+li {
+    padding: 1%;
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.banner {
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  top: 0;
+  text-align: center;
+  height: 10vh;
+  border-bottom: dashed 1px rgb(41, 39, 39);
+  font-weight: 600;
+  padding-top: 2vh;
+  position: sticky;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3cd3ba);
+}
+
+.main-banner-link {
+  float: left;
+  padding: 0px 1vw;
+  cursor: pointer;
+  font-size: 2.3em;
+}
+
+.auth-banner-link {
+  padding: 0px 1vw;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.auth-banner-welcome {
+  padding: 0px 1vw;
+  font-size: 2em;
+  color: black;
+}
+
+.auth-float {
+  float: right;
+}
+
+.link-btn {
+  text-decoration: none;
+  color: black;
+  border: none;
+}
+
+.link-btn:hover {
+  color: rgb(106, 78, 128);
+  border-bottom: solid rgba(107, 107, 107, 0.329) 1px;
+}
+
+.buttons-bottom {
+  /* position: absolute;
+  top: 8vh;
+  left: 11%; */
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+.nav-banner-link {
+  font-size: 1.5em;
+  padding: 1%;
+  /* margin: 0px 1vw; */
+}
+
+.leaderboards {
+  /* font-size: 2.3em; */
+  text-emphasis: none;
+}
+
+.patch-notes {
+  text-emphasis: none;
+}
+
+.feedback {
+  text-emphasis: none;
+}

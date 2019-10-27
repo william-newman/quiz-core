@@ -1,0 +1,30 @@
+<div class="banner">
+  <a class="link-btn main-banner-link" routerLink="/">{{ title }}</a>
+  <span class="auth-float">
+    <a *ngIf="!loggedIn" class="link-btn auth-banner-link" routerLink="/login">Login</a>
+    <div *ngIf="loggedIn" class="auth-banner-welcome">Welcome, {{ currentUsername }}</div>
+    <a *ngIf="loggedIn" (click)="logOff()" class="link-btn auth-banner-link" routerLink="/login">Sign Off</a>
+  </span>
+</div>
+
+<div class="tcontainer">
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <div class="ticker-item">
+        <img src="../assets/worldmap_gray.png" alt="Background is broken. Halp." height="100%" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="spacer"></div>
+
+<div class="footer">
+  <div class="buttons-bottom">
+    <a class="feedback link-btn footer-link" routerLink="/feedback">Feedback</a>
+    <a class="leaderboards link-btn footer-link" routerLink="/leaderboards">Leaderboards</a>
+    <a class="patch-notes link-btn footer-link" routerLink="/patch_notes">V{{ version }}</a>
+  </div>
+</div>

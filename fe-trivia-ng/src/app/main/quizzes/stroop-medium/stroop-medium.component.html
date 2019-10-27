@@ -1,0 +1,70 @@
+<div class="stroop-container">
+  <!-- Class is randomly generated, as is the word
+      Word is used to determine correctness -->
+  <div *ngIf="!testActive">
+    <div class="splash-text" *ngIf="!testResults">
+      Stroop Test - Complex
+    </div>
+  </div>
+  <div *ngIf="testActive">
+    <div *ngIf="red"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass, 'color-purple':purpleClass}">
+      RED</div>
+    <div *ngIf="green"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass, 'color-purple':purpleClass}">
+      GREEN</div>
+    <div *ngIf="blue"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass, 'color-purple':purpleClass}">
+      BLUE</div>
+    <div *ngIf="yellow"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass, 'color-purple':purpleClass}">
+      YELLOW</div>
+    <div *ngIf="purple"
+      [ngClass]="{'color-red':redClass, 'color-green':greenClass, 'color-blue':blueClass, 'color-yellow':yellowClass, 'color-purple':purpleClass}">
+      PURPLE</div>
+  </div>
+  <div *ngIf="testResults" class="splash-text">
+    {{ resultScreenMessage }}
+  </div>
+</div>
+<div *ngIf="testActive" class="stroop-input">
+  Timer: {{ testTimer }}
+</div>
+<div *ngIf="!testResults" class="info-panel">
+  <div>
+    <div *ngIf="!testActive" class="stroop-input">Press Enter to Begin!</div>
+  </div>
+  <div class="info" *ngIf="!testActive">
+    - Don't miss more than ten!<br />
+    - Wrong answers lower your score!<br />
+    - You have {{totalTime }} seconds!<br />
+  </div>
+  <hr />
+  <div class="controls">
+    "R" for RED <br />
+    "G" for GREEN <br />
+    "B" for BLUE <br />
+    "Y" for YELLOW <br />
+    "P" for PURPLE
+  </div>
+  {{ answerFeedback }}
+  <div *ngIf="testActive">
+    Correct: {{ numOfCorrectAnswers }}
+  </div>
+</div>
+<div *ngIf="testResults" class="test-results">
+  <div>
+    Congrats! <br />
+    You scored {{ numOfCorrectAnswers }} correct answers in {{ totalTime }} seconds and missed {{ numOfIncorrectAnswers }}!
+  </div>
+  <div>
+    <button type="button" (click)="tryAgain()">Try Again</button>
+  </div>
+  <div>
+    {{ errorMessage }}
+  </div>
+</div>
+<hr class="rule" />
+<div>
+  <button type="button" routerLink="/">Abandon Quiz</button>
+</div>
