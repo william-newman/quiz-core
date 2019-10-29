@@ -8,16 +8,16 @@ import appConstants from './appConstants';
 export class UserService {
   dataArr = [];
   currentUser =
-  // {
-  //   id: null,
-  //   username: null,
-  //   role: null
-  // };
   {
-    id: 'dummy',
-    username: 'Scruffy',
-    role: 'ADMIN'
+    id: null,
+    username: null,
+    role: null
   };
+  // {
+  //   id: 'dummy',
+  //   username: 'Scruffy',
+  //   role: 'ADMIN'
+  // };
 
   constructor(private http: HttpClient) { }
 
