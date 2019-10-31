@@ -72,3 +72,7 @@ div {
   display: inline-block;
   padding: 10px 2rem;
 }
+
+#small-text {
+  font-size: 1.4em;
+}

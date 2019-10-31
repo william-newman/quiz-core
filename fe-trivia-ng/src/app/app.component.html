@@ -2,8 +2,8 @@
   <a class="link-btn main-banner-link" routerLink="/">{{ title }}</a>
   <span class="auth-float">
     <a *ngIf="!loggedIn" class="link-btn auth-banner-link" routerLink="/login">Login</a>
-    <div *ngIf="loggedIn" class="auth-banner-welcome">Welcome, {{ currentUsername }}</div>
-    <a *ngIf="loggedIn" (click)="logOff()" class="link-btn auth-banner-link" routerLink="/login">Sign Off</a>
+    <div *ngIf="loggedIn" class="auth-banner-welcome" id="small-text">Welcome, {{ currentUsername }}</div>
+    <a *ngIf="loggedIn" (click)="logOff()" class="link-btn auth-banner-link" id="small-text" routerLink="/login">Sign Off</a>
   </span>
 </div>
 
