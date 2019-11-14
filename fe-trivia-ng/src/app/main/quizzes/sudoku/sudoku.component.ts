@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sudoku.component.css']
 })
 export class SudokuComponent implements OnInit {
+  fullGrid = [];
+  readOnly = [];
 
   constructor() { }
 
   ngOnInit() {
+    for (let i = 0; i < 81; i++) {
+      this.fullGrid.push('1');
+    }
   }
 
 }
