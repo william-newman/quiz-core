@@ -39,3 +39,9 @@ tr:first-child {
 tr:nth-child(3n) td {
   border-bottom: solid;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
