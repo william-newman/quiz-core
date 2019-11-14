@@ -13,6 +13,7 @@ import { SignupComponent } from './main/auth/signup/signup.component';
 import { AuthGuardService } from './main/services/auth-guard.service';
 import { RandomizerComponent } from './main/quizzes/randomizer/randomizer.component';
 import { SudokuComponent } from './main/quizzes/sudoku/sudoku.component';
+import { BreakoutComponent } from './main/quizzes/breakout/breakout.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'quizzes' },
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'sudoku',
     component: SudokuComponent
+  },
+  {
+    path: 'breakout',
+    component: BreakoutComponent
   },
   {
     path: 'stroop-easy',

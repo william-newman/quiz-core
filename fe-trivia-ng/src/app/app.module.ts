@@ -17,6 +17,7 @@ import { SignupComponent } from './main/auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RandomizerComponent } from './main/quizzes/randomizer/randomizer.component';
 import { SudokuComponent } from './main/quizzes/sudoku/sudoku.component';
+import { BreakoutComponent } from './main/quizzes/breakout/breakout.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SudokuComponent } from './main/quizzes/sudoku/sudoku.component';
     LoginComponent,
     SignupComponent,
     RandomizerComponent,
-    SudokuComponent
+    SudokuComponent,
+    BreakoutComponent
   ],
   imports: [
     BrowserModule,
