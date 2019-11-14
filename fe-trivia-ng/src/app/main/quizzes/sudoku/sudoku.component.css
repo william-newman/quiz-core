@@ -1,0 +1,35 @@
+.big-grid {
+  position: fixed;
+  top: 10vh;
+  left: 17vw;
+  background-color: rgba(78, 129, 131, 0.4);
+  border-radius: 1em;
+  padding: 10vh 20vw;
+}
+
+/* .sudoku-grid tr td {
+  border: solid 1px black;
+} */
+
+td {
+  height: 50px;
+  width: 50px;
+  border: 1px solid;
+  text-align: center;
+}
+
+td:first-child {
+  border-left: solid;
+}
+
+td:nth-child(3n) {
+  border-right: solid;
+}
+
+tr:first-child {
+  border-top: solid;
+}
+
+tr:nth-child(3n) td {
+  border-bottom: solid;
+}

@@ -16,6 +16,7 @@ import { LoginComponent } from './main/auth/login/login.component';
 import { SignupComponent } from './main/auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RandomizerComponent } from './main/quizzes/randomizer/randomizer.component';
+import { SudokuComponent } from './main/quizzes/sudoku/sudoku.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RandomizerComponent } from './main/quizzes/randomizer/randomizer.compon
     StroopHardComponent,
     LoginComponent,
     SignupComponent,
-    RandomizerComponent
+    RandomizerComponent,
+    SudokuComponent
   ],
   imports: [
     BrowserModule,

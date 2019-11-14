@@ -12,6 +12,7 @@ import { LoginComponent } from './main/auth/login/login.component';
 import { SignupComponent } from './main/auth/signup/signup.component';
 import { AuthGuardService } from './main/services/auth-guard.service';
 import { RandomizerComponent } from './main/quizzes/randomizer/randomizer.component';
+import { SudokuComponent } from './main/quizzes/sudoku/sudoku.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'quizzes' },
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'randomizer',
     component: RandomizerComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'sudoku',
+    component: SudokuComponent
   },
   {
     path: 'stroop-easy',
