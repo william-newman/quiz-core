@@ -1,4 +1,4 @@
-<button class="btn" (click)="bumpScore()">boost</button>
+<button class="btn" (click)="bump()">Boost!</button>
 <canvas #breakoutCanvas width="960" height="640"></canvas>
 <div *ngIf="!gameRunning && !gameOver" class="control-panel">
   Start Game!
@@ -8,6 +8,8 @@
 </div>
 <div *ngIf="gameOver" class="modal control-panel">
     <div class="message">{{ gameMessage }}</div>
+    <br />
+    <div>Number of bricks ABSOLUTELY DEMOLISHED: {{ score }}</div>
     <br />
     Play Again?
     <button class="btn" (click)="begin('easy')">Easy</button>

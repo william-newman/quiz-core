@@ -15,19 +15,18 @@ import {
 export class BreakoutComponent implements OnInit, AfterViewInit {
   @ViewChild('breakoutCanvas') canvas: ElementRef;
   private ctx: CanvasRenderingContext2D;
-  x;
+  x; // ball position axes
   y;
-  dx = 4;
-  dy = -3;
-  ballRadius = 10;
+  dx = 4; // ball velocity
+  dy = 3;
+  ballRadius = 10; // ball
 
-  paddleHeight = 15;
-  paddleWidth = 75;
+  paddleHeight = 20;
+  paddleWidth = 100;
   paddleX;
+  paddleY;
   rightPressed = false;
   leftPressed = false;
-
-  interval: any;
 
   bricks = [];
   brickRowCount = 5;
@@ -46,7 +45,8 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
   gameDefaults = {
     xLocation: 0,
     yLocation: 0,
-    paddleX: 0
+    paddleX: 0,
+    paddleY: 0
   };
 
   easyLevelDefaults = {
@@ -66,26 +66,26 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
     brickRowCount: 5,
     brickColumnCount: 8,
     dx: 9,
-    dy: -5,
+    dy: -6,
     lives: 2,
     brickWidth: 75,
-    brickHeight: 20,
-    brickPadding: 12,
-    brickOffsetTop: 50,
-    brickOffsetLeft: 60
+    brickHeight: 15,
+    brickPadding: 30,
+    brickOffsetTop: 40,
+    brickOffsetLeft: 70
   };
 
   hardLevelDefaults = {
     brickRowCount: 3,
-    brickColumnCount: 10,
-    dx: 4,
-    dy: -3,
+    brickColumnCount: 5,
+    dx: 18,
+    dy: -10,
     lives: 1,
-    brickWidth: 75,
+    brickWidth: 50,
     brickHeight: 20,
-    brickPadding: 10,
-    brickOffsetTop: 50,
-    brickOffsetLeft: 60
+    brickPadding: 125,
+    brickOffsetTop: 60,
+    brickOffsetLeft: 100
   };
 
   anim: any;
@@ -129,13 +129,15 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
 
     this.gameDefaults = {
       xLocation: this.canvas.nativeElement.width / 2,
-      yLocation: this.canvas.nativeElement.height - 30,
-      paddleX: (this.canvas.nativeElement.width - this.paddleWidth) / 2
+      yLocation: this.canvas.nativeElement.height - 55,
+      paddleX: (this.canvas.nativeElement.width - this.paddleWidth) / 2,
+      paddleY: this.canvas.nativeElement.height - this.paddleHeight - 25
     };
 
     this.x = this.gameDefaults.xLocation;
     this.y = this.gameDefaults.yLocation;
     this.paddleX = this.gameDefaults.paddleX;
+    this.paddleY = this.gameDefaults.paddleY;
 
     this.makeBricks();
     this.drawBall();
@@ -169,6 +171,9 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
     this.drawBricks();
     this.collisionDetection();
 
+    this.x += this.dx;
+    this.y += this.dy;
+
     if (
       this.x + this.dx > this.canvas.nativeElement.width - this.ballRadius ||
       this.x + this.dx < this.ballRadius
@@ -182,9 +187,16 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
       this.y + this.dy >
       this.canvas.nativeElement.height - this.ballRadius
     ) {
-      if (this.x > this.paddleX && this.x < this.paddleX + this.paddleWidth) {
+      if (
+        this.x > this.paddleX &&
+        this.x < this.paddleX + this.paddleWidth
+        // this.y + this.dy >
+        //   this.canvas.nativeElement.height - this.ballRadius - 30
+      ) {
         this.dy = -this.dy;
       } else {
+        console.log(this.y);
+
         this.lives--;
         if (this.lives < 1) {
           const gameMessage = 'GAME OVER';
@@ -198,14 +210,16 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
               this.dx = this.easyLevelDefaults.dx;
               this.dy = this.easyLevelDefaults.dy;
               break;
-              case 1:
-                  this.dx = this.mediumLevelDefaults.dx;
-                  this.dy = this.mediumLevelDefaults.dy;
-                  break;
-                  case 2:
-                      this.dx = this.hardLevelDefaults.dx;
-                      this.dy = this.hardLevelDefaults.dy;
-                      break;
+            case 1:
+              this.dx = this.mediumLevelDefaults.dx;
+              this.dy = this.mediumLevelDefaults.dy;
+              break;
+            case 2:
+              this.dx = this.hardLevelDefaults.dx;
+              this.dy = this.hardLevelDefaults.dy;
+              break;
+            default:
+              break;
           }
         }
       }
@@ -222,9 +236,6 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
         this.paddleX = 0;
       }
     }
-
-    this.x += this.dx;
-    this.y += this.dy;
   }
 
   drawBall() {
@@ -239,7 +250,7 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
     this.ctx.beginPath();
     this.ctx.rect(
       this.paddleX,
-      this.canvas.nativeElement.height - this.paddleHeight,
+      this.paddleY,
       this.paddleWidth,
       this.paddleHeight
     );
@@ -334,33 +345,49 @@ export class BreakoutComponent implements OnInit, AfterViewInit {
 
   setEasy() {
     this.difficulty = 0;
-    this.lives = 3;
-    this.dx = 4;
-    this.dy = -3;
-    this.brickRowCount = 3;
-    this.brickColumnCount = 10;
+    this.lives = this.easyLevelDefaults.lives;
+    this.dx = this.easyLevelDefaults.dx;
+    this.dy = this.easyLevelDefaults.dy;
+    this.brickRowCount = this.easyLevelDefaults.brickRowCount;
+    this.brickColumnCount = this.easyLevelDefaults.brickColumnCount;
+    this.brickWidth = this.easyLevelDefaults.brickWidth;
+    this.brickHeight = this.easyLevelDefaults.brickHeight;
+    this.brickPadding = this.easyLevelDefaults.brickPadding;
+    this.brickOffsetTop = this.easyLevelDefaults.brickOffsetTop;
+    this.brickOffsetLeft = this.easyLevelDefaults.brickOffsetLeft;
   }
 
   setMedium() {
     this.difficulty = 1;
-    this.lives = 2;
-    this.dx = 9;
-    this.dy = -5;
-    this.brickRowCount = 5;
-    this.brickColumnCount = 8;
+    this.lives = this.mediumLevelDefaults.lives;
+    this.dx = this.mediumLevelDefaults.dx;
+    this.dy = this.mediumLevelDefaults.dy;
+    this.brickRowCount = this.mediumLevelDefaults.brickRowCount;
+    this.brickColumnCount = this.mediumLevelDefaults.brickColumnCount;
+    this.brickWidth = this.mediumLevelDefaults.brickWidth;
+    this.brickHeight = this.mediumLevelDefaults.brickHeight;
+    this.brickPadding = this.mediumLevelDefaults.brickPadding;
+    this.brickOffsetTop = this.mediumLevelDefaults.brickOffsetTop;
+    this.brickOffsetLeft = this.mediumLevelDefaults.brickOffsetLeft;
   }
 
   setHard() {
     this.difficulty = 2;
-    this.lives = 1;
-    this.dx = 4;
-    this.dy = -3;
-    this.brickRowCount = 5;
-    this.brickColumnCount = 8;
+    this.lives = this.hardLevelDefaults.lives;
+    this.dx = this.hardLevelDefaults.dx;
+    this.dy = this.hardLevelDefaults.dy;
+    this.brickRowCount = this.hardLevelDefaults.brickRowCount;
+    this.brickColumnCount = this.hardLevelDefaults.brickColumnCount;
+    this.brickWidth = this.hardLevelDefaults.brickWidth;
+    this.brickHeight = this.hardLevelDefaults.brickHeight;
+    this.brickPadding = this.hardLevelDefaults.brickPadding;
+    this.brickOffsetTop = this.hardLevelDefaults.brickOffsetTop;
+    this.brickOffsetLeft = this.hardLevelDefaults.brickOffsetLeft;
   }
 
-  bumpScore() {
-    this.score += 10;
+  bump() {
+    this.dx *= 2;
+    this.dy *= 2;
   }
 
   endGame(msg: string) {

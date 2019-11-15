@@ -24,12 +24,13 @@ canvas {
 }
 
 .modal {
+    width: 36vw;
     background-color: rgba(79, 133, 133, 0.9);
     padding: 2rem;
     border-radius: 1rem;
     position: fixed;
     top: 30vh;
-    right: 40vw;
+    left: 30vw;
     text-align: center;
     font-size: 1.5rem;
 }
