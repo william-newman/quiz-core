@@ -5,12 +5,11 @@
   top: 0;
   text-align: center;
   height: 10vh;
-  /* border-bottom: dashed 1px rgb(41, 39, 39); */
   font-weight: 600;
   padding-top: 2vh;
   position: sticky;
-  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3cd3ba); */
 }
+
 /* Are ya yellow?!: #feda6a cadet instead
 
 Silver Fox: #d4d4dc
